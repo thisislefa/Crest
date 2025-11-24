@@ -1,0 +1,275 @@
+/* --- Variables & Reset --- */
+        :root {
+            --color-bg: #ffffff;
+            --color-card-bg: #f9f9f9; /* Light off-white for cards */
+            --color-text-main: #111111;
+            --color-text-muted: #666666;
+            --color-accent: #ff5e3a; /* Orange/Red dot color */
+            --color-star: #ffb800;
+            --font-family: 'Inter', sans-serif;
+            --border-radius: 12px;
+            --image-radius: 16px;
+            --transition: 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--color-bg);
+            color: var(--color-text-main);
+            display: flex;
+            justify-content: center;
+            padding: 60px 20px;
+            min-height: 100vh;
+        }
+
+        /* --- Main Section --- */
+        .feedback-section {
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        /* --- Header --- */
+        .feedback-header {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            margin-bottom: 60px;
+            align-items: start;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .section-label::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 6px;
+            background-color: var(--color-accent);
+            border-radius: 50%;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 600;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            max-width: 600px;
+        }
+
+        /* --- Grid Layout --- */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        /* --- Testimonial Card --- */
+        .feedback-card {
+            background-color: var(--color-card-bg);
+            padding: 32px;
+            border-radius: var(--border-radius);
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            transition: transform var(--transition);
+        }
+
+        .feedback-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .client-profile {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .client-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: var(--image-radius);
+            object-fit: cover;
+        }
+
+        .client-details {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .client-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-text-main);
+        }
+
+        .client-role {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            font-weight: 400;
+        }
+
+        .rating-stars {
+            display: flex;
+            gap: 4px;
+            margin-top: 4px;
+        }
+
+        .star-icon {
+            width: 16px;
+            height: 16px;
+            fill: var(--color-star);
+        }
+
+        .feedback-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--color-text-main);
+            font-weight: 400;
+            padding-top: 5rem;
+        }
+
+        /* --- Video Card --- */
+        .video-card {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            cursor: pointer;
+            min-height: 320px; /* Match height of text cards */
+            background-color: #000;
+            group: video-group;
+        }
+
+        .video-cover {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s;
+            opacity: 0.9;
+        }
+        
+        .video-card:hover .video-cover {
+            opacity: 0.8;
+            transform: scale(1.05);
+            transition: transform 0.6s ease, opacity 0.3s ease;
+        }
+
+        /* Overlay Content (Play button & Text) */
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center play button vertically */
+            align-items: center;     /* Center play button horizontally */
+            z-index: 2;
+            pointer-events: none; /* Let clicks pass to container */
+        }
+
+        .play-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
+            border: 2px solid #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .play-icon {
+            width: 20px;
+            height: 20px;
+            fill: #ffffff;
+            margin-left: 4px; /* Visual optical adjustment */
+        }
+
+        .video-card:hover .play-btn {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .video-title {
+            position: absolute;
+            bottom: 32px;
+            left: 32px;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.1;
+            text-align: left;
+            max-width: 80%;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        /* Actual Video Element (Hidden initially) */
+        .video-player {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+            z-index: 5;
+        }
+
+        .video-card.is-playing .video-player {
+            display: block;
+        }
+        
+        .video-card.is-playing .video-overlay,
+        .video-card.is-playing .video-cover {
+            display: none;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 1024px) {
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 cols */
+            }
+            /* Make video card span full width or fit in grid */
+            .video-card {
+                grid-column: span 2; 
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .feedback-header {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr; /* 1 col */
+            }
+
+            .video-card {
+                grid-column: span 1;
+                height: 300px;
+            }
+        }
