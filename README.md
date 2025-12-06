@@ -2,6 +2,9 @@
 
 A beautifully designed, responsive testimonial showcase section built with pure HTML and CSS. This project features a modern grid layout displaying client testimonials with professional styling, company branding, and mobile-responsive design.
 
+## Live Demo
+[View Live Demo](https://thisislefa.github.io/Crest)
+
 ## Features
 
 - **Modern Grid Layout**: Clean 2-column desktop layout that stacks responsively on mobile
@@ -106,7 +109,7 @@ Duplicate the testimonial card structure in `index.html`:
 - Edge (latest)
 - Opera (latest)
 
-## 🔧 Technical Details
+## Technical Details
 
 ### HTML Structure
 - Semantic HTML5 elements (`section`, `header`, `main`)
@@ -164,5 +167,6 @@ For questions or feedback, you can:
 ---
 
 *Built with pure HTML and CSS. No frameworks, no bloat.*
+
 
 
