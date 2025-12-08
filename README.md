@@ -1,4 +1,4 @@
-# Testimonial Showcase: Feedback That Inspires
+# Crest - Testimonial Showcase Component
 
 A beautifully designed, responsive testimonial showcase section built with pure HTML and CSS. This project features a modern grid layout displaying client testimonials with professional styling, company branding, and mobile-responsive design.
 
@@ -167,6 +167,7 @@ For questions or feedback, you can:
 ---
 
 *Built with pure HTML and CSS. No frameworks, no bloat.*
+
 
 
 
