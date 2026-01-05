@@ -3,7 +3,7 @@
 A beautifully designed, responsive testimonial showcase section built with pure HTML and CSS. This project features a modern grid layout displaying client testimonials with professional styling, company branding, and mobile-responsive design.
 
 ## Live Demo
-[View Live Demo](https://thisislefa.github.io/Crest)
+[View Live Demo](https://lefajmofokeng.github.io/Crest)
 
 ## Features
 
@@ -167,6 +167,7 @@ For questions or feedback, you can:
 ---
 
 *Built with pure HTML and CSS. No frameworks, no bloat.*
+
 
 
 
